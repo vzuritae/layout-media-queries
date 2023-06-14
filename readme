@@ -1,0 +1,7 @@
+Se crean 3 versiones de layout:
+
+Mobile
+Tablet (>= 576px)
+Desktop (>= 992px)
+
+Se trabaja en viewport con resolución 1536 X 864

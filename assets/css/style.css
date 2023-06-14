@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/*estructura layout - versión mobile*/
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 100px 1fr 80px;
+    grid-template-areas: 
+    "navbar"
+    "buscador"
+    "main"
+    "footer";
+}
+
+.navbar {
+    background-color: #E67E22;
+    color: #FFFFFF;
+    grid-area: navbar;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buscador {
+    background-color: #BFC9CA; 
+    grid-area: buscador;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.main {
+    background-color: #FFFFFF;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer {
+    background-color: #935116;
+    color: #FFFFFF;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*menú de navegación (navbar)*/
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.logo p {
+    font-family: 'Righteous', cursive;
+    font-size: 22px;
+}
+
+.menú {
+    padding-right: 20px;
+}
+
+/*filtros de búsqueda (buscador)*/
+
+.filtros {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    width: 70%;
+}
+
+/*main*/
+
+.container-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #7F8C8D;
+}
+
+.card img {
+    max-width: 100%;
+}
+
+.producto {
+    text-align: center;
+    font-weight: 600;
+}
+
+.precio {
+    color: #7F8C8D;
+    text-align: center;
+}
+
+.button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #E67E22;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10%;
+}
+
+.número-página {
+    color: #935116;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.número-página p {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #935116;
+    text-align: center;
+}
+
+/*footer*/
+
+.íconos {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/*visualización menú de navegación en versión mobile*/
+
+@media (max-device-width: 575px) {
+    .menú-desplegado {
+        display: none;
+    }
+}
+
+/*estructura layout - versión tablet*/
+
+@media (min-width: 576px) {
+    .container {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 80px 1fr 80px;
+        grid-template-areas: 
+        "navbar navbar"
+        "buscador main"
+        "footer footer";
+    }
+
+    .menú-ícono {
+        display: none;
+    }
+
+    .menú-desplegado {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .buscador {
+        margin-bottom: 0px;
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+
+    .container-cards {
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+
+    .card {
+        flex-basis: 47%;
+    }
+}
+
+/*estructura layout - versión desktop*/
+
+@media (min-width: 992px) {
+    .container {
+        grid-template-columns: 1fr 8fr;
+        grid-template-rows: 100px 1fr 120px;
+        grid-template-areas: 
+        "navbar buscador"
+        "navbar main"
+        "footer main";
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .logo {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .menú-desplegado {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 40px;
+    }
+
+    .container-cards {
+        overflow-y: auto;
+    }
+
+    .card {
+        flex-basis: 23%;
+    }
+}
